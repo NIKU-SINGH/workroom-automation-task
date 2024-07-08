@@ -1,11 +1,6 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { Plus } from "lucide-react";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { createPortal } from "react-dom";
 import {
   Card,
@@ -27,7 +22,7 @@ import {
 
 function Index() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const handleButtonClick = (event) => {
+  const handleButtonClick = () => {
     setIsModalOpen(!isModalOpen);
   };
 

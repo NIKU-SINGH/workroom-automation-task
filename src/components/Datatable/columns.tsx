@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table";
-import Inspection from "../types/Inspection";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { Inspection } from "./types";
+import { ArrowUpDown } from "lucide-react";
 import { Button } from "../ui/button";
 
 export const columns: ColumnDef<Inspection>[] = [
@@ -17,7 +17,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const status = row.getValue("inspectionStatus") || "Not yet started";
       return (
         <div className="text-center">
@@ -51,7 +51,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const inspectionId = row.getValue("inspectionId") || "not found";
       return <div className="text-center">{inspectionId}</div>;
     },
@@ -69,7 +69,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const lotStatus = row.getValue("lotStatus") || "not found";
       return <div className="text-center">{lotStatus}</div>;
     },
@@ -87,7 +87,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const icPartName = row.getValue("icPartName") || "not found";
       return <div className="text-center">{icPartName}</div>;
     },
@@ -105,7 +105,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const supplierName = row.getValue("supplierName") || "not found";
       return <div className="text-center">{supplierName}</div>;
     },
@@ -123,7 +123,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const totalOrderQuantity = parseInt(row.getValue("totalOrderQuantity"));
       return <div className="text-center">{totalOrderQuantity}</div>;
     },
@@ -141,7 +141,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const samplingSize = parseInt(row.getValue("samplingSize"));
       return <div className="text-center">{samplingSize}</div>;
     },
@@ -159,7 +159,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const totalOK = parseInt(row.getValue("totalOK"));
       return <div className="text-center">{totalOK}</div>;
     },
@@ -177,7 +177,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const totalNOK = parseInt(row.getValue("totalNOK"));
       return <div className="text-center">{totalNOK}</div>;
     },
@@ -195,7 +195,7 @@ export const columns: ColumnDef<Inspection>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => {
+    cell: ({ row }: { row: any }): React.ReactNode => {
       const createdAt = new Date(row.getValue("createdAt")).toLocaleDateString(
         "en-US",
         {

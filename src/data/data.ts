@@ -1,4 +1,4 @@
-import Inspection from "../components/Datatable/types";
+import {Inspection} from "../components/Datatable/types";
 
 export const data: Inspection[] = [
   {

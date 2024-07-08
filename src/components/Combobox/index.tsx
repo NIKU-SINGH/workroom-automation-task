@@ -1,8 +1,4 @@
-"use client";
-
 import * as React from "react";
-import { DropdownMenuCheckboxItemProps } from "@radix-ui/react-dropdown-menu";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -16,16 +12,11 @@ import {
 
 import { ChevronDown } from "lucide-react";
 
-type Checked = DropdownMenuCheckboxItemProps["checked"];
-
 export interface filterProps {
   filterName: string;
   filterOptions: string[];
 }
 export default function Index({ filterName, filterOptions }: filterProps) {
-  const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true);
-  const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false);
-  const [showPanel, setShowPanel] = React.useState<Checked>(false);
   const [value, setValue] = React.useState("");
 
   return (
