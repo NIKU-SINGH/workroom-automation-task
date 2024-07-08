@@ -6,7 +6,17 @@ import { Button } from "../ui/button";
 export const columns: ColumnDef<Inspection>[] = [
   {
     accessorKey: "inspectionStatus",
-    header: () => <div className="text-black">Inspection Status</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Inspection Status</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const status = row.getValue("inspectionStatus") || "Not yet started";
       return (
@@ -30,7 +40,17 @@ export const columns: ColumnDef<Inspection>[] = [
   },
   {
     accessorKey: "inspectionId",
-    header: () => <div className="text-black">Inspection ID</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Inspection ID</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const inspectionId = row.getValue("inspectionId") || "not found";
       return <div className="text-center">{inspectionId}</div>;
@@ -38,19 +58,71 @@ export const columns: ColumnDef<Inspection>[] = [
   },
   {
     accessorKey: "lotStatus",
-    header: () => <div className="text-black">Lot Status/Verdict</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Lot Status/Verdict</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const lotStatus = row.getValue("lotStatus") || "not found";
+      return <div className="text-center">{lotStatus}</div>;
+    },
   },
   {
     accessorKey: "icPartName",
-    header: () => <div className="text-black">IC Part Name</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">IC Part Name</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const icPartName = row.getValue("icPartName") || "not found";
+      return <div className="text-center">{icPartName}</div>;
+    },
   },
   {
     accessorKey: "supplierName",
-    header: () => <div className="text-black">Supplier Name</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Supplier Name</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
+    cell: ({ row }) => {
+      const supplierName = row.getValue("supplierName") || "not found";
+      return <div className="text-center">{supplierName}</div>;
+    },
   },
   {
     accessorKey: "totalOrderQuantity",
-    header: () => <div className="text-black">Total Order Quantity</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Total Order Quantity</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const totalOrderQuantity = parseInt(row.getValue("totalOrderQuantity"));
       return <div className="text-center">{totalOrderQuantity}</div>;
@@ -58,7 +130,17 @@ export const columns: ColumnDef<Inspection>[] = [
   },
   {
     accessorKey: "samplingSize",
-    header: () => <div className="text-black">Sampling Size</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Sampling Size</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const samplingSize = parseInt(row.getValue("samplingSize"));
       return <div className="text-center">{samplingSize}</div>;
@@ -66,7 +148,17 @@ export const columns: ColumnDef<Inspection>[] = [
   },
   {
     accessorKey: "totalOK",
-    header: () => <div className="text-black">Total OK</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Total OK</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const totalOK = parseInt(row.getValue("totalOK"));
       return <div className="text-center">{totalOK}</div>;
@@ -74,7 +166,17 @@ export const columns: ColumnDef<Inspection>[] = [
   },
   {
     accessorKey: "totalNOK",
-    header: () => <div className="text-black">Total NOK</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Total NOK</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const totalNOK = parseInt(row.getValue("totalNOK"));
       return <div className="text-center">{totalNOK}</div>;
@@ -82,7 +184,17 @@ export const columns: ColumnDef<Inspection>[] = [
   },
   {
     accessorKey: "createdAt",
-    header: () => <div className="text-black">Created At</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          <div className="text-black">Created At</div>
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      );
+    },
     cell: ({ row }) => {
       const createdAt = new Date(row.getValue("createdAt")).toLocaleDateString(
         "en-US",
@@ -95,18 +207,4 @@ export const columns: ColumnDef<Inspection>[] = [
       return <div>{createdAt}</div>;
     },
   },
-//   {
-//     accessorKey: "samplingSize",
-//     header: ({ column }) => {
-//       return (
-//         <Button
-//           variant="ghost"
-//           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-//         >
-//           Email
-//           <ArrowUpDown className="ml-2 h-4 w-4" />
-//         </Button>
-//       );
-//     },
-//   },
 ];

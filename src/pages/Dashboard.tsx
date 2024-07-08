@@ -12,6 +12,7 @@ import {
 import { DataTable } from "../components/Datatable/data-table";
 import { columns } from "../components/Datatable/columns";
 import { data } from "../data/data";
+import Modal from "../components/Modal";
 
 function Dashboard() {
   return (
@@ -19,16 +20,27 @@ function Dashboard() {
       {/* Filter Section */}
       <div className=" p-4 mx-10 flex items-center justify-between flex-wrap">
         <div className="flex gap-2 flex-wrap">
-          <Combobox />
-          <Combobox />
-          <Combobox />
-          <Combobox />
+          <Combobox
+            filterName="Inspection Status"
+            filterOptions={["Open", "Ongoing", "Submitted", "Rejected"]}
+          />
+          <Combobox
+            filterName="Lot Status"
+            filterOptions={["Accepted", "Rejected"]}
+          />
+          <Combobox
+            filterName="Supplier Name"
+            filterOptions={["Supplier A", "Supplier B", "Supplier C"]}
+          />
+          <Combobox
+            filterName="IC Part Name"
+            filterOptions={["IC Part A", "IC Part B", "IC Part C"]}
+          />
+
           <Datepicker />
         </div>
         {/* Add button */}
-        <Button className="bg-blue-600 font-normal gap-1">
-          <Plus size={20} strokeWidth={2} /> New Inspection
-        </Button>
+        <Modal />
       </div>
       <hr className="w-full border-t-2 border-gray-200" />
       {/* Header section and download data */}
