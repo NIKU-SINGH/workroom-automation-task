@@ -1,6 +1,5 @@
 import React from 'react';
 import jsPDF from 'jspdf';
-import 'jspdf-autotable'; // Import jspdf-autotable plugin
 import { tableData } from '@/data/data'; // Adjust the path as per your project structure
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Button } from '../ui/button';
@@ -21,6 +20,7 @@ const Index: React.FC = () => {
 
     // Add table headers
     doc.text('Inspection Data', 14, 10);
+    // @ts-ignore
     doc.autoTable({
       head: [headers],
       body: data,
