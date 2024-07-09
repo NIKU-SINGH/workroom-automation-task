@@ -236,7 +236,7 @@ function Index() {
                       </Select>
                     </div>
                   </div>
-                  <CardFooter className="flex justify-end space-x-2 bottom-0">
+                  <CardFooter className="flex justify-end space-x-2 bottom-0 mt-4">
                     <Button
                       type="submit"
                       className="bg-green-600 font-normal gap-1"

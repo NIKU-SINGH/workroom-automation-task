@@ -14,7 +14,7 @@ function Dashboard() {
         const data = await fetchData();
         setTableData(data);
         setIsLoading(false); 
-        console.log("Data fetched successfully:", data);
+        // console.log("Data fetched successfully:", data);
       } catch (error) {
         console.error("Error fetching data:", error);
         setIsLoading(false); 

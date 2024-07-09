@@ -91,7 +91,6 @@ export function DataTable<TData, TValue>({
   // Get unique values from specified columns for filtering
   const getUniqueColumnValues = (columnName: string) => {
     const uniqueValues = new Set(data.map((item) => item[columnName as keyof typeof item]));
-    console.log("unique values", typeof(uniqueValues))
     return Array.from(uniqueValues);
   };
 
@@ -124,7 +123,7 @@ export function DataTable<TData, TValue>({
     "lotStatus",
   ];
 
-  console.log("filter value", filterValues);
+//   console.log("filter value", filterValues);
   return (
     <div>
       <div className="flex items-center py-4 space-x-4 flex-wrap space-y-2">
