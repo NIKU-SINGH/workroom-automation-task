@@ -1,5 +1,5 @@
 import { ColumnDef } from "@tanstack/react-table";
-import { Inspection } from "./types";
+import { Inspection } from "@/types/types"
 import { ArrowUpDown } from "lucide-react";
 import { Button } from "../ui/button";
 
